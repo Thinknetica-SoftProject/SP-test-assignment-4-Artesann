@@ -16,4 +16,22 @@
 #
 ## Решение:
 
+data = File.read("data/4.txt").split("\n")
 
+sum = 0
+
+data.each do |line|
+    sizes = line.split("x")
+    width = sizes[0].to_i
+    length = sizes[1].to_i
+    height = sizes[2].to_i
+    
+    surfs = []
+    surfs.push(width * length)
+    surfs.push(width * height)
+    surfs.push(height * length)
+
+    sum += surfs[0] * 2 + surfs[1] * 2 + surfs[2] * 2 + surfs.min
+end
+
+puts sum

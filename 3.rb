@@ -11,3 +11,13 @@
 ## Решение:
 
 
+data = File.read("data/3.txt").split("\n")
+sum = 0
+
+data.each do |str|
+    max = str.split("\t").max.to_i
+    min = str.split("\t").min.to_i
+    sum += max - min
+end
+
+puts sum

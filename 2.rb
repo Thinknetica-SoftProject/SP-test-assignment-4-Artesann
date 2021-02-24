@@ -16,3 +16,16 @@
 #
 ## Решение:
 
+require 'digest'
+
+md5 = Digest::MD5.new 
+input = gets.chomp
+counter = 1
+hash = md5.hexdigest(input + counter.to_s)
+
+while !hash.start_with? "00000"
+    counter += 1
+    hash = md5.hexdigest(input + counter.to_s)
+end
+
+puts input + counter.to_s

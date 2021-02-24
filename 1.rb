@@ -16,6 +16,17 @@
 #
 ## Решение:
 
+floor = 0
 
+file = File.new("data/1.txt")
+str = file.gets()
 
+str.each_char do |ch| 
+    if ch == '('
+        floor += 1
+    elsif ch == ')'
+        floor -= 1
+    end
+end
 
+puts floor
