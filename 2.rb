@@ -28,4 +28,4 @@ while !hash.start_with? "00000"
     hash = md5.hexdigest(input + counter.to_s)
 end
 
-puts input + counter.to_s
+puts counter

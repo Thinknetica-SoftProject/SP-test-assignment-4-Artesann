@@ -15,8 +15,15 @@ data = File.read("data/3.txt").split("\n")
 sum = 0
 
 data.each do |str|
-    max = str.split("\t").max.to_i
-    min = str.split("\t").min.to_i
+
+    numbers = []
+    str.split("\t").each do |num|
+        numbers.push(num.to_i)
+    end
+
+    max = numbers.max
+    min = numbers.min
+
     sum += max - min
 end
 
